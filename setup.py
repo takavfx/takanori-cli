@@ -9,7 +9,7 @@ def _read_requirements(file):
         return f.readlines()
 
 about = {}
-with open(os.path.join(here, 'takacli', '__init__.py'), 'r', encoding='utf-8') as f:
+with open(os.path.join(here, 'takanoricli', '__init__.py'), 'r', encoding='utf-8') as f:
     exec(f.read(), about)
 
 setup(
@@ -20,11 +20,11 @@ setup(
     install_requires=_read_requirements('requirements/requirements.txt'),
     test_requirements=_read_requirements('requirements/requirements_test.txt'),
     python_requires='>=3.7.*',
-    packages=['takacli'],
-    package_dir={"takacli": "takacli"},
+    packages=['takanoricli'],
+    package_dir={"takanoricli": "takanoricli"},
     entry_points={
         'console_scripts': [
-            'taka = takacli.cli:main'
+            'taka = takanoricli.cli:main'
         ]
     },
 )
