@@ -1,6 +1,6 @@
 import click
 
-from .create import mkdir
+from .create import mkdd
 
 
 @click.group()
@@ -10,7 +10,7 @@ def main():
 
 def register_cmds():
     cmds = [
-        mkdir
+        mkdd
     ]
 
     for cmd in cmds:
