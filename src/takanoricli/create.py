@@ -8,7 +8,7 @@ from pathlib import Path
 @click.argument("target", default=".")
 @click.option("-d", "--days", default=0)
 @click.option("-s", "--silent", is_flag=True)
-def mkdir(target: str, days: int, silent: bool):
+def mkdd(target: str, days: int, silent: bool):
     target_path = Path(target)
 
     today = datetime.date.today() + datetime.timedelta(days=days)

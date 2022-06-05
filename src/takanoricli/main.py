@@ -1,9 +1,11 @@
 import click
 
+from takanoricli import __version__
 from .create import mkdd
 
 
 @click.group()
+@click.version_option(version=__version__, prog_name="Takanori CLI")
 def main():
     pass
 
