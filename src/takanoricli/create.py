@@ -7,8 +7,9 @@ from pathlib import Path
 @click.command()
 @click.argument("target", default=".")
 @click.option("-d", "--days", default=0)
-@click.option("-s", "--silent", is_flag=True)
-def mkdd(target: str, days: int, silent: bool):
+@click.option("-s", "--silent", is_flag=True, help="Execute command without confirm.")
+def mktd(target: str, days: int, silent: bool):
+    """Make date directories to a given path."""
     target_path = Path(target)
 
     today = datetime.date.today() + datetime.timedelta(days=days)
