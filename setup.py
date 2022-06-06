@@ -1,14 +1,14 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
-def _read_requirements(file):
+def read_requirements(file):
     with open(file, encoding='utf-8') as f:
         return f.readlines()
 
 
 setup(
     name="takanori-cli",
-    install_requires=_read_requirements('requirements/base.txt'),
-    test_requirements=_read_requirements('requirements/test.txt'),
+    install_requires=read_requirements('requirements/base.txt'),
+    test_requirements=read_requirements('requirements/test.txt'),
 )
