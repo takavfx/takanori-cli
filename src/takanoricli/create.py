@@ -1,4 +1,3 @@
-from email.policy import default
 import click
 import datetime
 from pathlib import Path
@@ -8,7 +7,7 @@ from pathlib import Path
 @click.argument("target", default=".")
 @click.option("-d", "--days", default=0, help="Delta days from today's date.")
 @click.option("-s", "--silent", is_flag=True, help="Execute command without confirm.")
-def mktd(target: str, days: int, silent: bool):
+def mkdd(target: str, days: int, silent: bool):
     """Make date directories to a given path."""
     target_path = Path(target)
 

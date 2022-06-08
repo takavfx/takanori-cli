@@ -1,7 +1,7 @@
 import click
 
 from takanoricli import __version__
-from .create import mktd
+from .create import mkdd
 
 
 @click.group()
@@ -12,7 +12,7 @@ def main():
 
 def register_cmds():
     cmds = [
-        mktd
+        mkdd
     ]
 
     for cmd in cmds:
