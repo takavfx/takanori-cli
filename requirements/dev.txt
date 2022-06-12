@@ -1,3 +1,0 @@
-autopep8
-pytest
-pytest-mock
