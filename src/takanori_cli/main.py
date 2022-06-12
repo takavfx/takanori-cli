@@ -22,8 +22,8 @@ def cli():
     from importlib import metadata
 
     eps = metadata.entry_points()
-    if eps.get("takanori-cli"):
-        mycli_eps = eps["takanori-cli"]
+    if eps.get("takanoricli"):
+        mycli_eps = eps["takanoricli"]
         for ep in mycli_eps:
             plugin = ep.load()
             main.add_command(plugin)
