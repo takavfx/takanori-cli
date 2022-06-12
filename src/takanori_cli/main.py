@@ -1,7 +1,8 @@
 import click
 
-from takanoricli import __version__
+from takanori_cli import __version__
 from .create import mkdd
+from .plugin import plugin
 
 
 @click.group()
@@ -11,9 +12,7 @@ def main():
 
 
 def register_cmds():
-    cmds = [
-        mkdd
-    ]
+    cmds = [mkdd, plugin]
 
     for cmd in cmds:
         main.add_command(cmd)
@@ -21,9 +20,10 @@ def register_cmds():
 
 def cli():
     from importlib import metadata
+
     eps = metadata.entry_points()
-    if eps.get("takanoricli"):
-        mycli_eps = eps["takanoricli"]
+    if eps.get("takanori-cli"):
+        mycli_eps = eps["takanori-cli"]
         for ep in mycli_eps:
             plugin = ep.load()
             main.add_command(plugin)
